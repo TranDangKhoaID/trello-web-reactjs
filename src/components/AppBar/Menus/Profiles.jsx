@@ -32,7 +32,7 @@ function Profiles() {
           aria-expanded={open ? 'true' : undefined}
         >
           <Avatar
-            sx={{ width: 34, height: 34 }}
+            sx={{ width: 36, height: 36 }}
             alt='avatar'
             src='https://cdnb.artstation.com/p/assets/covers/images/036/222/345/large/anna-sarkisian-cover.jpg?1617057537'
           />
