@@ -84,14 +84,17 @@ function BoardBar() {
         Invite
         </Button>
         <AvatarGroup
-          max={7}
+          max={5}
           sx={{
             gap: '10px',
             '& .MuiAvatar-root':{
               width: 34,
               height: 34,
               fontSize: 16,
-              border: 'none'
+              border: 'none',
+              color: 'white',
+              cursor: 'pointer',
+              '&:first-of-type':{ bgcolor: '#a4b0be' }
             }
           }}
         >
@@ -103,6 +106,15 @@ function BoardBar() {
           </Tooltip>
           <Tooltip title="trankhoa">
             <Avatar alt="trankhoa" src="https://wallpapers.com/images/hd/nami-one-piece-msa237393zrzc76n.jpg" />
+          </Tooltip>
+          <Tooltip title="trankhoa">
+            <Avatar alt="trankhoa" src="https://www.xtrafondos.com/wallpapers/vertical/roronoa-zoro-one-piece-red-10698.jpg" />
+          </Tooltip>
+          <Tooltip title="trankhoa">
+            <Avatar alt="trankhoa" src="https://www.xtrafondos.com/wallpapers/vertical/roronoa-zoro-one-piece-red-10698.jpg" />
+          </Tooltip>
+          <Tooltip title="trankhoa">
+            <Avatar alt="trankhoa" src="https://www.xtrafondos.com/wallpapers/vertical/roronoa-zoro-one-piece-red-10698.jpg" />
           </Tooltip>
           <Tooltip title="trankhoa">
             <Avatar alt="trankhoa" src="https://www.xtrafondos.com/wallpapers/vertical/roronoa-zoro-one-piece-red-10698.jpg" />
