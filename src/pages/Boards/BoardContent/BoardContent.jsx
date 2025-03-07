@@ -5,14 +5,15 @@ import {
   DndContext,
   DragOverlay,
   defaultDropAnimationSideEffects,
-  MouseSensor,
-  TouchSensor,
+  // MouseSensor,
+  // TouchSensor,
   useSensor,
   useSensors,
   closestCorners,
   pointerWithin,
   getFirstCollision
 } from '@dnd-kit/core'
+import { MouseSensor, TouchSensor } from '~/customLibraries/DndKitSensors'
 import { arrayMove } from '@dnd-kit/sortable'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { cloneDeep, isEmpty } from 'lodash'
