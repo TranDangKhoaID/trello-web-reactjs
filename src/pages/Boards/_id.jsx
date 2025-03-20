@@ -11,11 +11,13 @@ import {
   createNewCardAPI,
   updateBoardDetailsAPI,
   updateColumnDetailsAPI,
-  moveCardToDifferentColumnAPI
+  moveCardToDifferentColumnAPI,
+  deleteColumnDetailsAPI
 } from '~/apis'
 import { genaratePlaceholderCard } from '~/utils/formatters'
 import { isEmpty } from 'lodash'
 import { mapOrder } from '~/utils/sorts'
+import { toast } from 'react-toastify'
 import Typography from '@mui/material/Typography'
 
 function Board() {
@@ -125,9 +127,22 @@ function Board() {
     })
   }
 
+  //xu li xoa column va cards
+  const deleteColumnDetails = (columnId) => {
+    //update state board
+    const newBoard = { ...board }
+    newBoard.columns = newBoard.columns.filter(c => c._id !== columnId)
+    newBoard.columnOrderIds = newBoard.columnOrderIds.filter(_id => _id !== columnId)
+    setBoard(newBoard)
+    //call api
+    deleteColumnDetailsAPI(columnId).then(res => {
+      toast.success(res?.deleteResult)
+    })
+  }
+
   if (!board) {
     return (
-      <Box sx={{ 
+      <Box sx={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -153,6 +168,7 @@ function Board() {
           moveColumns={moveColumns}
           moveCardInTheSameColumn={moveCardInTheSameColumn}
           moveCardToDifferentColumn={moveCardToDifferentColumn}
+          deleteColumnDetails={deleteColumnDetails}
         />
       </Container>
     </>
